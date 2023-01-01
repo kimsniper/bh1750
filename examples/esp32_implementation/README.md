@@ -36,26 +36,26 @@ See the [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/l
 ## Example Output
 
 ```bash
-I (320) example_usage: Device reset: Successful
-I (330) example_usage: Changing power mode to ON: Successful
-I (510) example_usage: BH1750 config successful
-I (510) example_usage: BH1750 initialization successful
-I (630) example_usage: Light Intensity: 34 Lux
-I (1750) example_usage: Light Intensity: 34 Lux
-I (2870) example_usage: Light Intensity: 34 Lux
-I (3990) example_usage: Light Intensity: 34 Lux
-I (5110) example_usage: Light Intensity: 34 Lux
-I (6230) example_usage: Light Intensity: 34 Lux
-I (7350) example_usage: Light Intensity: 34 Lux
-I (8470) example_usage: Light Intensity: 242 Lux
-I (9590) example_usage: Light Intensity: 492 Lux
-I (10710) example_usage: Light Intensity: 415 Lux
-I (11830) example_usage: Light Intensity: 386 Lux
-I (12950) example_usage: Light Intensity: 371 Lux
-I (14070) example_usage: Light Intensity: 309 Lux
-I (15190) example_usage: Light Intensity: 81 Lux
-I (16310) example_usage: Light Intensity: 37 Lux
-I (17430) example_usage: Light Intensity: 34 Lux
-I (18550) example_usage: Light Intensity: 34 Lux
-I (19670) example_usage: Light Intensity: 33 Lux
+I (321) example_usage: Device reset: Successful
+I (331) example_usage: Changing power mode to ON: Successful
+I (511) example_usage: BH1750 config successful
+I (511) example_usage: Changing measurement time: Successful
+I (511) example_usage: BH1750 initialization successful
+I (751) example_usage: Light Intensity: 0 Lux
+I (1991) example_usage: Light Intensity: 31 Lux
+I (3231) example_usage: Light Intensity: 32 Lux
+I (4471) example_usage: Light Intensity: 32 Lux
+I (5711) example_usage: Light Intensity: 32 Lux
+I (6951) example_usage: Light Intensity: 185 Lux
+I (8191) example_usage: Light Intensity: 688 Lux
+I (9431) example_usage: Light Intensity: 636 Lux
+I (10671) example_usage: Light Intensity: 618 Lux
+I (11911) example_usage: Light Intensity: 616 Lux
+I (13151) example_usage: Light Intensity: 466 Lux
+I (14391) example_usage: Light Intensity: 33 Lux
+I (15631) example_usage: Light Intensity: 505 Lux
+I (16871) example_usage: Light Intensity: 535 Lux
+I (18111) example_usage: Light Intensity: 69 Lux
+I (19351) example_usage: Light Intensity: 31 Lux
+I (20591) example_usage: Light Intensity: 30 Lux
 ```

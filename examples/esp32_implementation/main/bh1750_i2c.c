@@ -32,7 +32,6 @@
 #include "bh1750_i2c.h" 
 #include "bh1750_i2c_hal.h" 
 
-#include "stdio.h"
 #include "math.h"
 
 int16_t bh1750_i2c_dev_reset(bh1750_dev_t dev)
@@ -72,21 +71,29 @@ int16_t bh1750_i2c_set_resolution_mode(bh1750_dev_t *dev, bh1750_res_mode_t mode
 int16_t bh1750_i2c_set_mtreg_val(bh1750_dev_t *dev, float sens)
 {
     uint8_t data;
+    int16_t err;
     sens /= 100;
     if(sens > 100 || ((dev->mtreg_val * ((uint8_t) (1 / sens))) > 0xFF))
         return BH1750_ERR;
     
-    data = dev->mtreg_val * (uint8_t) (1 / sens);
-    int16_t err = bh1750_i2c_hal_write(dev->i2c_addr, &data, 1);
+    uint8_t mtreg = dev->mtreg_val * (uint8_t) (1 / sens);
+
+    /* Send high bits */
+    data = OPECODE_MEAS_TIME_HIGH_BIT | (mtreg >> 5);
+    err = bh1750_i2c_hal_write(dev->i2c_addr, &data, 1);
+
+    if(err != BH1750_OK)
+        return err;
+
+    /* Send low bits */
+    data = OPECODE_MEAS_TIME_LOW_BIT | (mtreg & 0x1F);
+    err = bh1750_i2c_hal_write(dev->i2c_addr, &data, 1);
 
     if(err != BH1750_OK)
         return err;
 
     dev->meas_time *= (uint8_t) (1 / sens);
-    dev->mtreg_val = data;
-
-    printf("dev->meas_time: %d\n", dev->meas_time);
-    printf("dev->mtreg_val: %d\n", dev->mtreg_val);
+    dev->mtreg_val = mtreg;
 
     return err;
 }

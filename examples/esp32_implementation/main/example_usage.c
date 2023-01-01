@@ -40,6 +40,10 @@ void app_main(void)
     }
     /* End of device config */
 
+    /* Change measurement time with  50% optical window transmission rate */
+    err += bh1750_i2c_set_mtreg_val(&dev_1, 50);
+    ESP_LOGI(TAG, "Changing measurement time: %s", err == BH1750_OK ? "Successful" : "Failed");
+
     if (err == BH1750_OK)
     {
         ESP_LOGI(TAG, "BH1750 initialization successful");
