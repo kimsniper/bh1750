@@ -29,6 +29,10 @@ void app_main(void)
     err += bh1750_i2c_set_power_mode(dev_1, BH1750_POWER_ON);
     ESP_LOGI(TAG, "Changing power mode to ON: %s", err == BH1750_OK ? "Successful" : "Failed");
 
+    /* Change measurement time with  50% optical window transmission rate */
+    err += bh1750_i2c_set_mtreg_val(&dev_1, 50);
+    ESP_LOGI(TAG, "Changing measurement time: %s", err == BH1750_OK ? "Successful" : "Failed");
+
     /* Configure device */
     err += bh1750_i2c_set_resolution_mode(&dev_1, BH1750_CONT_H_RES_MODE);
     if (err == BH1750_OK)
@@ -39,10 +43,6 @@ void app_main(void)
         ESP_LOGE(TAG, "BH1750 config failed!");
     }
     /* End of device config */
-
-    /* Change measurement time with  50% optical window transmission rate */
-    err += bh1750_i2c_set_mtreg_val(&dev_1, 50);
-    ESP_LOGI(TAG, "Changing measurement time: %s", err == BH1750_OK ? "Successful" : "Failed");
 
     if (err == BH1750_OK)
     {

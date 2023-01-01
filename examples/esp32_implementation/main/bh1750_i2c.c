@@ -92,7 +92,7 @@ int16_t bh1750_i2c_set_mtreg_val(bh1750_dev_t *dev, float sens)
     if(err != BH1750_OK)
         return err;
 
-    dev->meas_time *= (uint8_t) (1 / sens);
+    dev->meas_time_mul = (uint8_t) (1 / sens);
     dev->mtreg_val = mtreg;
 
     return err;
@@ -106,7 +106,7 @@ int16_t bh1750_i2c_read_data(bh1750_dev_t dev, uint16_t *dt)
     *dt = (data[0] << 8) | data[1];
     *dt = round(*dt / 1.2f);
 
-    bh1750_i2c_hal_ms_delay(dev.meas_time);
+    bh1750_i2c_hal_ms_delay(dev.meas_time * dev.meas_time_mul);
 
     return err;
 }

@@ -66,6 +66,7 @@ extern "C" {
 typedef struct{
     uint8_t i2c_addr;
     uint16_t meas_time;
+    uint16_t meas_time_mul;
     uint8_t mtreg_val;
 } bh1750_dev_t;
 

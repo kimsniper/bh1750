@@ -36,26 +36,22 @@ See the [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/l
 ## Example Output
 
 ```bash
-I (321) example_usage: Device reset: Successful
-I (331) example_usage: Changing power mode to ON: Successful
-I (511) example_usage: BH1750 config successful
-I (511) example_usage: Changing measurement time: Successful
-I (511) example_usage: BH1750 initialization successful
-I (751) example_usage: Light Intensity: 0 Lux
-I (1991) example_usage: Light Intensity: 31 Lux
-I (3231) example_usage: Light Intensity: 32 Lux
-I (4471) example_usage: Light Intensity: 32 Lux
-I (5711) example_usage: Light Intensity: 32 Lux
-I (6951) example_usage: Light Intensity: 185 Lux
-I (8191) example_usage: Light Intensity: 688 Lux
-I (9431) example_usage: Light Intensity: 636 Lux
-I (10671) example_usage: Light Intensity: 618 Lux
-I (11911) example_usage: Light Intensity: 616 Lux
-I (13151) example_usage: Light Intensity: 466 Lux
-I (14391) example_usage: Light Intensity: 33 Lux
-I (15631) example_usage: Light Intensity: 505 Lux
-I (16871) example_usage: Light Intensity: 535 Lux
-I (18111) example_usage: Light Intensity: 69 Lux
-I (19351) example_usage: Light Intensity: 31 Lux
-I (20591) example_usage: Light Intensity: 30 Lux
+I (322) example_usage: Device reset: Successful
+I (332) example_usage: Changing power mode to ON: Successful
+I (332) example_usage: Changing measurement time: Successful
+I (522) example_usage: BH1750 config successful
+I (522) example_usage: BH1750 initialization successful
+I (762) example_usage: Light Intensity: 0 Lux
+I (2002) example_usage: Light Intensity: 8 Lux
+I (3242) example_usage: Light Intensity: 8 Lux
+I (4482) example_usage: Light Intensity: 8 Lux
+I (5722) example_usage: Light Intensity: 8 Lux
+I (6962) example_usage: Light Intensity: 303 Lux
+I (8202) example_usage: Light Intensity: 418 Lux
+I (9442) example_usage: Light Intensity: 402 Lux
+I (10682) example_usage: Light Intensity: 288 Lux
+I (11922) example_usage: Light Intensity: 8 Lux
+I (13162) example_usage: Light Intensity: 8 Lux
+I (14402) example_usage: Light Intensity: 8 Lux
+I (15642) example_usage: Light Intensity: 8 Lux
 ```
